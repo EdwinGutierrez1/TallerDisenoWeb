@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <!-- Se importa una fuente externa para los textos -->
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Radley:ital@0;1&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Radley:ital@0;1&display=swap" rel="stylesheet">
     <title>Interstelar</title>
 </head>
+
 <body>
     <header>
         <img src="imagenesTaller/logo.png" alt="Logo de la pelicula" id="logo">
-        <nav id="navbar">
+        <nav class="navbar">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Sinopsis</a></li>
-                <li><a href="">Galeria</a></li>
-                <li><a href="">Comunidad</a></li>
+                <li><a id="link1" href="#Carrusel">Inicio</a></li>
+                <li><a id="link2" href="#Sinopsis">Sinopsis</a></li>
+                <li><a id="link3" href="#Galeria">Galería</a></li>
+                <li><a id="link4" href="#Comunidad">Comunidad</a></li>
             </ul>
         </nav>
+        <script src="scripts.js"></script>
     </header>
 
-    
-    
-    <!-- Carrusel de imagenes de la película y el detrás de cámaras-->
-    <div id="Carrusel" class="full-height carrusel flex-center">
-    <h1>seccion</h1>
-    </div>
+    <div class="ContenedorPrincipal"> 
+        <!-- Carrusel de imagenes de la película y el detrás de cámaras-->
+        <section id="Carrusel" class="full-height carrusel">
+        <h1>seccion</h1>
+        </section>
 
-   <!-- Sección de la sinopsis -->
-    <div id="Sinopsis" class="full-height sinopsis flex-center">
-    <h1>seccion</h1>
+        <!-- Sección de la sinopsis -->
+        <section id="Sinopsis" class="full-height sinopsis">
+        <h1>seccion</h1>
+        </section>
+        
+        <!-- Galeria con fotos de los actores principales -->
+        <section id="Galeria" class="full-height galeria">
+        <h1>seccion</h1>
+        </section>
+
+        <!-- Sección de "Comunidad", en la que el usuario podrá ingresar sus datos para recibir noticias, información
+        acceso a concursos y demás relacionados con la película -->
+        <section id="Comunidad" class="full-height comunidad">
+        <h1>seccion</h1>
+        </section>
+        <footer id="footer">
+            <p> Pinga pinga pinga </p>
+        </footer>
     </div>
     
-    <!-- Galeria con fotos de los actores principales -->
-    <div id="Galeria" class="full-height galeria flex-center">
-    <h1>seccion</h1>
-    </div>
-
-    <!-- Sección de "Comunidad", en la que el usuario podrá ingresar sus datos para recibir noticias, información
-    acceso a concursos y demás relacionados con la película -->
-    <div id="Comunidad" class="full-height comunidad flex-center">
-    <h1>seccion</h1>
-    </div>
-
-    
-
-    <footer> </footer>
 </body>
 </html>

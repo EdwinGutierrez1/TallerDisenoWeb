@@ -1,13 +1,36 @@
 body{
     background-color: aquamarine;
+    font-family: Inter;
+    overflow: hidden;
 }
 
 
 /* El asterico quiere decir "para todos los elementos". Se modifica el estilo de todos los elementos.*/
-*{
+*{ 
     margin: 0; /*Ponemos el margen en 0*/
     padding: 0; /*Ponemos el padding (relleno) en 0*/
     box-sizing: border-box; /*Hacemos que el padding y el border se incluyan en el cálculo del ancho y alto del elemento.*/
+    scroll-behavior: smooth;
+} 
+
+/*Se establece la altura de cada sección al 100% del alto de la ventana gráfica (viewport height) */
+.full-height{
+    height: 100vh;
+}
+
+
+.ContenedorPrincipal{
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+    overflow-y: auto;
+    height:100vh;
+}
+
+.ContenedorPrincipal::-webkit-scrollbar {
+    display: none; 
+}
+section{
+    scroll-snap-align: start;
 }
 
 a{
@@ -21,10 +44,11 @@ header{
     display: flex;
     padding: 26px 0;
     justify-content: space-between;
+    position: sticky;
 }
 
 header > img{
-    width: 10%;
+    width: 20%;
     margin: 0 5rem;
 
 }
@@ -33,6 +57,7 @@ header > nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    justify-items: center;
     margin: 0 3rem;
 }
 
@@ -47,32 +72,44 @@ header > nav > ul > li{
     margin: 0 50px;
 }
 
+header > nav > ul > li > a {
+    color: white;
+    font-size: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
 
+/* Clase para el efecto hover */
+.hover-effect {
+    background-color: rgba(255, 255, 255);
+    color: lightcoral;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
 /* ESTILOS DE LAS SECCIONES */
 
-
-
-
-
- /*Estilos del carrusel de fotos*/
- #Carrusel{
+/*Estilos del carrusel de fotos*/
+#Carrusel{
     background-color: yellow;
- }
+}
 
- /*Estilos de la sección de sinopsis*/
- #Sinopsis{
+/*Estilos de la sección de sinopsis*/
+#Sinopsis{
     background-color: red;
- }
+}
 
- /*Estilos de la sección de galeria*/
- #Galeria{
+/*Estilos de la sección de galeria*/
+#Galeria{
     background-color: blue;
- }
+}
 
- /*Estilos de la sección "Comunidad"*/
- #Comunidad{
+/*Estilos de la sección "Comunidad"*/
+#Comunidad{
     background-color: green;
- }
+}
+/*Estilos del footer*/
+#footer{
+    background-color: white;
+    height: 30vh;
+    scroll-snap-align: start;
 
- /*Estilos del footer*/
+}
