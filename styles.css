@@ -1,0 +1,78 @@
+body{
+    background-color: aquamarine;
+}
+
+
+/* El asterico quiere decir "para todos los elementos". Se modifica el estilo de todos los elementos.*/
+*{
+    margin: 0; /*Ponemos el margen en 0*/
+    padding: 0; /*Ponemos el padding (relleno) en 0*/
+    box-sizing: border-box; /*Hacemos que el padding y el border se incluyan en el cálculo del ancho y alto del elemento.*/
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    padding: 26px 0;
+    justify-content: space-between;
+}
+
+header > img{
+    width: 10%;
+    margin: 0 5rem;
+
+}
+
+header > nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 3rem;
+}
+
+header > nav > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header > nav > ul > li{
+    display: inline;
+    margin: 0 50px;
+}
+
+
+
+/* ESTILOS DE LAS SECCIONES */
+
+
+
+
+
+ /*Estilos del carrusel de fotos*/
+ #Carrusel{
+    background-color: yellow;
+ }
+
+ /*Estilos de la sección de sinopsis*/
+ #Sinopsis{
+    background-color: red;
+ }
+
+ /*Estilos de la sección de galeria*/
+ #Galeria{
+    background-color: blue;
+ }
+
+ /*Estilos de la sección "Comunidad"*/
+ #Comunidad{
+    background-color: green;
+ }
+
+ /*Estilos del footer*/
