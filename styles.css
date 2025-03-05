@@ -1,7 +1,5 @@
 body{
-    background-color: aquamarine;
     font-family: Inter;
-    overflow: hidden;
 }
 
 
@@ -39,18 +37,16 @@ a{
 }
 
 header{
+    background-color: #000000e7 ;
     width: 100%;
-    background-color: rgb(54, 54, 54);
     display: flex;
-    padding: 26px 0;
+    padding: 0.8% 0;
     justify-content: space-between;
-    position: sticky;
 }
 
 header > img{
     width: 20%;
     margin: 0 5rem;
-
 }
 
 header > nav{
@@ -85,17 +81,77 @@ header > nav > ul > li > a {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+
+
 /* ESTILOS DE LAS SECCIONES */
 
 /*Estilos del carrusel de fotos*/
-#Carrusel{
-    background-color: yellow;
+#Carrusel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
 }
+
+#Carrusel ul {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    animation: slide 15s infinite;
+}
+
+#Carrusel ul li {
+    list-style-type: none;
+    flex: 1 0 100%;
+}
+
+#Carrusel ul li img {
+    width: 100%;
+    height: 93.1%;
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    16.67% { transform: translateX(0); }
+    20% { transform: translateX(-100%); }
+    36.67% { transform: translateX(-100%); }
+    40% { transform: translateX(-200%); }
+    56.67% { transform: translateX(-200%); }
+    60% { transform: translateX(-300%); }
+    76.67% { transform: translateX(-300%); }
+    80% { transform: translateX(-400%); }
+    96.67% { transform: translateX(-400%); }
+    100% { transform: translateX(-500%); }
+}
+
+
+
+
 
 /*Estilos de la sección de sinopsis*/
 #Sinopsis{
-    background-color: red;
+    position: relative;
+    background-image: url('imagenesTaller/lolazo.jpg'); /* Aquí va la ruta de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
+    background-position: center; /* Centra la imagen */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
 }
+
+#Sinopsis .Texto{
+    position: absolute;
+    top: 20%; /* Centra el texto verticalmente */
+    left: 20%; /* Centra el texto horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para que el texto esté perfectamente centrado */
+    color: white; /* Cambia el color del texto */
+    font-size: 24px; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Haz el texto en negrita */
+    text-align: center; /* Centra el texto */
+}
+
+
 
 /*Estilos de la sección de galeria*/
 #Galeria{
