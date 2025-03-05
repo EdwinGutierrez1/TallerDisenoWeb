@@ -71,15 +71,18 @@ header > nav > ul > li{
 header > nav > ul > li > a {
     color: white;
     font-size: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    padding: 10px 6px;
 }
 
 /* Clase para el efecto hover */
-.hover-effect {
-    background-color: rgba(255, 255, 255);
-    color: lightcoral;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.efecto-hover {
+    background-color: rgb(51, 51, 51); /* Fondo claro */
+    color: rgb(128, 173, 240); /* Texto de color coral */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Transición suave */
+    transform: translateY(10px); /* Desplazamiento hacia arriba */
 }
+
 
 
 
