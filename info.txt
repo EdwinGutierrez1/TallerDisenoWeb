@@ -1,3 +1,7 @@
 Fuente del texto: Radley.
 undraw.com -> Ilustraciones gratis
 webgradients.com -> para colores gradientes
+
+
+background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 17%, rgba(1,2,38,1) 51%, rgba(13,2,42,1) 86%);
