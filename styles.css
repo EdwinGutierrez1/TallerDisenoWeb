@@ -1,34 +1,27 @@
 body{
+    margin:0;
+    padding:0;
     font-family: Archivo;
-}
-
-
-/* El asterico quiere decir "para todos los elementos". Se modifica el estilo de todos los elementos.*/
-*{ 
-    margin: 0; /*Ponemos el margen en 0*/
-    padding: 0; /*Ponemos el padding (relleno) en 0*/
     box-sizing: border-box; /*Hacemos que el padding y el border se incluyan en el cálculo del ancho y alto del elemento.*/
-    scroll-behavior: smooth;
-} 
+}
 
 /*Se establece la altura de cada sección al 100% del alto de la ventana gráfica (viewport height) */
 .full-height{
     height: 100vh;
 }
 
-
 .ContenedorPrincipal{
     height:100vh;
 }
-
 
 a{
     text-decoration: none;
     color: black;
 }
 
-header{
 
+/* Estilos del Header */
+header{
     position: absolute;
     z-index: 100;
     width: 100%;
@@ -62,10 +55,23 @@ header > nav > ul > li{
 }
 
 header > nav > ul > li > a {
-    color: white;
+    font-weight: bold;
+    color: black;
     font-size: 27px;
     padding: 22px 20px;
 }
+
+/* El header tiene dos clases, header-blanco y header-negro, las cuales se usan dependiendo de la imagen que esté de fondo
+en el carrusel, para asegurar que siempre se genere un buen contraste y el texto sea legible */
+
+.header-blanco{
+    color:white;
+}
+
+.header-negro{
+    color:black;
+}
+
 
 /* Clase para el efecto hover */
 .efecto-hover {
@@ -78,60 +84,61 @@ header > nav > ul > li > a {
 
 
 
-
 /* ESTILOS DE LAS SECCIONES */
 
 /*Estilos del carrusel de fotos*/
-#Carrusel {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+.carrusel{
+    width:100vw;
+    height:100vh;
+    position:relative;
     overflow: hidden;
-    position: relative;
-    z-index: 0;
 }
 
-#Carrusel ul {
+.lista{
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
     display: flex;
-    width: 100%;
-    height: 100vh;
-    animation: slide 15s infinite;
+    width: max-content;
+    transition: 1s;
 }
 
-#Carrusel ul li {
-    list-style-type: none;
-    flex: 1 0 100%;
-}
-
-#Carrusel ul li img {
-    width: 100%;
-    height: 100%;
+.lista img{
+    width:100vw;
+    height:100vh;
     object-fit: cover;
-    transition: transform 1s ease-in-out;
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    16.67% { transform: translateX(0); }
-    20% { transform: translateX(-100%); }
-    36.67% { transform: translateX(-100%); }
-    40% { transform: translateX(-200%); }
-    56.67% { transform: translateX(-200%); }
-    60% { transform: translateX(-300%); }
-    76.67% { transform: translateX(-300%); }
-    80% { transform: translateX(-400%); }
-    96.67% { transform: translateX(-400%); }
-    100% { transform: translateX(0); }
+.botones{
+    position: absolute;
+    top:45%;
+    left:2.5%;
+    width:94%;
+    display: flex;
+    justify-content: space-between;
 }
 
+.botones button{
+    cursor:pointer;
+    border:none;
+    width:40px;
+    height:50px;
+    border-radius:20%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+}
 
-
-
+.botones button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
 /*Estilos de la sección de sinopsis*/
 #Sinopsis{
     position: relative;
-    background-image: url('imagenesTaller/lolazo2.jpg'); 
+    background-image: url('Imagenes/lolazo2.jpg'); 
     background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
     background-position: center; /* Centra la imagen */
     height: 100vh;
@@ -166,17 +173,21 @@ header > nav > ul > li > a {
 
 /*Estilos de la sección de galeria*/
 #Galeria{
-    background-color: blue;
-    
+    background: rgb(0,0,0);
+    background: linear-gradient(45deg, rgba(0,0,0,1) 5%, rgba(1,2,38,1) 51%, rgba(13,2,42,1) 86%, rgba(0,0,0,1) 100%);
+    height: 100vh;
+    color: white;
+    margin: 0;
 }
 
 .Titulo{
     display: flex;
     justify-content: center;
-    padding: 30px ;
-    font-size: 40px;
-    background-color: black;
+    padding: 0;
+    padding-top: 30px ;
+    font-size: 110px;
     color: white;
+    margin: 0;
 }
 
 .Grid-fotos{
@@ -184,33 +195,45 @@ header > nav > ul > li > a {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     justify-content: center;
-    margin: 0 auto;
 }
 
-.Cuadro{
+.Cuadro {
+    position: relative; /* Permite que .Nombre se posicione correctamente */
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    object-fit: cover;
+    padding-bottom: 30px;
 }
 
 .Foto{
-    width: calc(100% / 2.5);
+    width: calc(100% / 2.8);
+    border-radius: 50%;
+}
 
+.Nombre {
+    position: absolute; /* Posiciona el nombre sobre la imagen */
+    bottom: 10px; /* Ajusta la posición */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease-in-out; /* Animación de aparición */
 }
 
 
 /*Estilos de la sección "Comunidad"*/
 #Comunidad{
-    background-color: green;
+    height: 100vh;
+    background-image: url(Imagenes/ImagenesForm/ImagenForm.jpg);
 }
+
+
 /*Estilos del footer*/
 #footer{
     background-color: white;
     height: 30vh;
     scroll-snap-align: start;
-
 }
