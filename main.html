@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
-    rel="stylesheet">
-    <!-- Se linkea con un icono externo de google fonts. -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_right" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ponomar&family=Radley:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" href="Imagenes/LogoPagina/logo3.png">
     <title>Interstelar™</title>
 </head>
 
@@ -22,7 +21,7 @@
         <!-- Carrusel de imagenes de la película y el detrás de cámaras-->
         <section id="SeccionInicial" class="full-height SeccionInicial">
 
-            <header class="header-negro header-blanco">
+            <header class="header-blanco">
                 <img src="Imagenes/logo.png" alt="Logo de la pelicula" id="logo">
                 <nav class="navbar">
                     <ul>
@@ -107,10 +106,23 @@
         <!-- Sección de "Comunidad", en la que el usuario podrá ingresar sus datos para recibir noticias, información
         acceso a concursos y demás relacionados con la película -->
         <section id="Comunidad" class="full-height comunidad">
-            <form action="Post">
-                <label for="nombreCompleto">Ingrese el nombre completo</label>
-            </form>
+            <h1>Comunidad</h1>
+            <div class="Formulario">
+                <div class="Texto">
+                    <h2>Ingresa tus datos para recibir noticias, información y acceso a concursos</h2>
+                </div>
+                <div class="Form">
+                    <form>
+                        <input type="text" id="nombreCompleto" placeholder="Ingrese su nombre completo" required>
+                        <input type="email" id="correo" placeholder="Ingrese su correo electronico" required>
+                        <input type="tel" id="telefono" placeholder="Ingrese su numero de telefono" required>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
         </section>
+
+        <!-- FOOTER -->
         <footer id="footer">
             <p> Pinga pinga pinga </p>
         </footer>

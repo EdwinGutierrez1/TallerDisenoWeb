@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    font-family: Archivo;
+    font-family: "Big Shoulders";
     box-sizing: border-box; /*Hacemos que el padding y el border se incluyan en el cálculo del ancho y alto del elemento.*/
 }
 
@@ -16,9 +16,8 @@ body{
 
 a{
     text-decoration: none;
-    color: black;
+    color:black;
 }
-
 
 /* Estilos del Header */
 header{
@@ -46,7 +45,7 @@ header > nav{
 header > nav > ul{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 8px;
 }
 
 header > nav > ul > li{
@@ -56,33 +55,27 @@ header > nav > ul > li{
 
 header > nav > ul > li > a {
     font-weight: bold;
-    color: black;
-    font-size: 27px;
-    padding: 22px 20px;
+    font-size: 30px;
+    padding: 22px 12px;
 }
 
-/* El header tiene dos clases, header-blanco y header-negro, las cuales se usan dependiendo de la imagen que esté de fondo
+/* El header tiene dos clases, header-blanco y header-alternativo, las cuales se usan dependiendo de la imagen que esté de fondo
 en el carrusel, para asegurar que siempre se genere un buen contraste y el texto sea legible */
 
 .header-blanco{
     color:white;
 }
 
-.header-negro{
-    color:black;
+.header-alternativo{
+    color:#303f4d;
 }
 
 
 /* Clase para el efecto hover */
 .efecto-hover {
-    background-color: rgb(51, 51, 51); /* Fondo claro */
-    color: rgb(128, 173, 240); /* Texto de color coral */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
-    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Transición suave */
-    transform: translateY(10px); /* Desplazamiento hacia arriba */
+    text-decoration: underline;
+    transform: scale(1.5);
 }
-
-
 
 /* ESTILOS DE LAS SECCIONES */
 
@@ -138,7 +131,7 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
 /*Estilos de la sección de sinopsis*/
 #Sinopsis{
     position: relative;
-    background-image: url('Imagenes/lolazo2.jpg'); 
+    background-image: url('Imagenes/ImagenesSinopsis/ImagenEndurance.png'); 
     background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
     background-position: center; /* Centra la imagen */
     height: 100vh;
@@ -228,6 +221,75 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
 #Comunidad{
     height: 100vh;
     background-image: url(Imagenes/ImagenesForm/ImagenForm.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+#Comunidad h1{
+    display: flex;
+    justify-content: center;
+    font-size: 110px;
+    padding-top: 4% ;
+    margin: 0;
+}
+
+.Formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(55, 108, 189, 0.1);
+    margin: 6rem 0 0 18rem;
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+.Texto{
+    padding: 9% 0 1% 0;
+    justify-content: center;
+}
+
+.Texto h2{
+    font-size: 35px;
+    text-align: center;
+}
+
+
+.Formulario input{
+    width: 400px;
+    height: 40px;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(7, 29, 63, 0.7);
+    color: white;
+}
+
+.Formulario input[type="submit"]{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(7, 29, 63, 0.7);
+    color: white;
+}
+
+input::placeholder{
+    color: white;
+    font-size: 17px ;
+    text-align: center;
+}
+
+.Formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2rem;
 }
 
 

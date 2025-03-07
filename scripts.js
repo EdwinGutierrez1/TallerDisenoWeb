@@ -18,6 +18,7 @@ let lista = document.querySelector('.carrusel .lista');
 let items = document.querySelectorAll('.carrusel .lista .item')
 let prev = document.getElementById('prev');
 let next = document.getElementById('next');
+let headerLinks = document.querySelectorAll('header a');
 
 let activa = 0; 
 let longitudItems = items.length - 1;
@@ -43,9 +44,23 @@ prev.onclick = function(){
 
 //Cada 3 segundos, hace la acción de hacer click en un botón de manera automática. 
 let refrescarCarrusel = setInterval(()=>{next.click()},5000)
-function recargarCarrusel(){
-    let checkleft = items[activa].offsetLeft
+
+function recargarCarrusel() {
+    let checkleft = items[activa].offsetLeft;
     lista.style.left = -checkleft + 'px';
+
+    // Cambiar el color del texto de los enlaces dependiendo de la imagen activa
+    if (activa === 0) {
+        headerLinks.forEach(link => {
+            link.classList.add('header-alternativo');
+            link.classList.remove('header-blanco');
+        });
+    } else {
+        headerLinks.forEach(link => {
+            link.classList.add('header-blanco');
+            link.classList.remove('header-alternativo');
+        });
+    }
 
     /*Cuando se presiona algun botón, debe reiniciarse el intervalo en el que
     el sistema lleva a cabo de manera automática, la acción que este evento desata. esto para
