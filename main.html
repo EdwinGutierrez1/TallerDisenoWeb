@@ -4,29 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">   <!-- Se enlaza el documento html con la hoja de estilos (css)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">  <!-- Se enlaza el documento con la API de Google para incluir un mapa en el footer-->
+    <link rel="stylesheet" href="styles.css"> <!-- Se enlaza el documento html con la hoja de estilos (css)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Se enlaza el documento con la API de Google para incluir un mapa en el footer-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <!-- Se usa una fuente externa de google fonts, introduciendo su link en el header.-->
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ponomar&family=Radley:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ponomar&family=Radley:ital@0;1&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="Imagenes/LogoPagina/logo.png"> <!-- Se le pone un icono a la pagina web-->
     <title>Interstellar™</title> <!-- Titulo de la pagina web-->
 </head>
 
 
 <body>
-    <div class="ContenedorPrincipal"> <!-- Contiene tanto el header como el carrusel, es la sección que el usuario mira tan pronto se abre la pagina-->
+    <div class="ContenedorPrincipal">
+        <!-- Contiene tanto el header como el carrusel, es la sección que el usuario mira tan pronto se abre la pagina-->
 
         <!-- Carrusel de imagenes de la película-->
         <section id="SeccionInicial" class="full-height SeccionInicial">
             <header class="header-blanco">
-            <a id="logoPagina" href="https://www.youtube.com/watch?v=zSWdZVtXT7E" target="_blank">INTERSTELLAR</a> <!-- El logo de la pagina, es el nombre de la pelicula, y al hacer click en este, nos lleva a su trailer-->
+                <a id="logoPagina" href="https://www.youtube.com/watch?v=zSWdZVtXT7E" target="_blank">INTERSTELLAR</a>
+                <!-- El logo de la pagina, es el nombre de la pelicula, y al hacer click en este, nos lleva a su trailer-->
                 <nav class="navbar"> <!--Barra de navegación -->
                     <ul>
-                        <li><a id="link1" href="#Carrusel">Inicio</a></li> <!--Al hacer click en uno de los "botones" de navegación, nos enviará a una sección concreta de la pagina -->
-                        <li><a id="link2" href="#Sinopsis">Sinopsis</a></li> <!--Dentro de cada list element hay un anchor (enlace)-->
+                        <li><a id="link1" href="#Carrusel">Inicio</a></li>
+                        <!--Al hacer click en uno de los "botones" de navegación, nos enviará a una sección concreta de la pagina -->
+                        <li><a id="link2" href="#Sinopsis">Sinopsis</a></li>
+                        <!--Dentro de cada list element hay un anchor (enlace)-->
                         <li><a id="link3" href="#Cast">Cast</a></li>
                         <li><a id="link4" href="#Comunidad">Comunidad</a></li>
                     </ul>
@@ -34,10 +43,11 @@
             </header>
 
             <div class="carrusel"> <!-- Se crea un div para el carrusel -->
-                <div class="lista">  
-                    <div class="item"> <!--Cada imagen dentro del carrusel va dentro de su propia sección, de la clase "item"-->
+                <div class="lista">
+                    <div class="item">
+                        <!--Cada imagen dentro del carrusel va dentro de su propia sección, de la clase "item"-->
                         <img src="Imagenes/ImagenesCarrusel/ImagenPrincipal.jpeg">
-                    </div> 
+                    </div>
                     <div class="item">
                         <img src="Imagenes/ImagenesCarrusel/Imagen3erActo.jpg">
                     </div>
@@ -51,28 +61,36 @@
 
                 <!-- Se crean los botones para ir atrás y adelante -->
                 <div class="botones">
-                    <button id="prev">&#10094</button> <!--Los símbolos dentro de las etiquetas <button> representan flechas y están escritos en código Unicode -->
+                    <button id="prev">&#10094</button>
+                    <!--Los símbolos dentro de las etiquetas <button> representan flechas y están escritos en código Unicode -->
                     <button id="next">&#10095</button>
                 </div>
             </div>
         </section> <!--Se cierra la sección Inicial -->
 
 
-        <div class="Separador"> </div> <!-- Se agrega un div de la clase Separador. Esta se agregará después de cada sección grande -->
+        <div class="Separador"> </div>
+        <!-- Se agrega un div de la clase Separador. Esta se agregará después de cada sección grande -->
 
 
         <!-- Sección de la sinopsis -->
         <section id="Sinopsis" class="full-height sinopsis">
-            <video src="Imagenes/FotosVideosSinopsis/VideoEspacio.mp4" autoplay muted loop class="videoBackground"></video> <!-- Agregamos un video para el fondo de la sección. Definimos que se reproduzca automaticamente, este muteado y se repita indefinidamente-->
-            <a href="https://interstellarfilm.fandom.com/wiki/Endurance" target="blank"> <!-- anchor para llevar al usuario a una wiki con más información de la nave (se abre en una nueva pestaña)-->
-                <img src="Imagenes/FotosVideosSinopsis/ImagenEnduranceSF.png" title="Nave Endurance" alt="Imagen del Endurance" id="Endurance"> <!-- Se agrega la imagen de la nave "Endurance"-->
+            <video src="Imagenes/FotosVideosSinopsis/VideoEspacio.mp4" autoplay muted loop
+                class="videoBackground"></video>
+            <!-- Agregamos un video para el fondo de la sección. Definimos que se reproduzca automaticamente, este muteado y se repita indefinidamente-->
+            <a href="https://interstellarfilm.fandom.com/wiki/Endurance" target="blank">
+                <!-- anchor para llevar al usuario a una wiki con más información de la nave (se abre en una nueva pestaña)-->
+                <img src="Imagenes/FotosVideosSinopsis/ImagenEnduranceSF.png" title="Nave Endurance"
+                    alt="Imagen del Endurance" id="Endurance"> <!-- Se agrega la imagen de la nave "Endurance"-->
             </a>
             <div id="TituloSinopsis"> <!--Seccion para el titulo de la sinopsis -->
                 <h2>Sinopsis</h2>
             </div>
-            <div id="DescripcionSinopsis">  <!--Seccion para la descripción de la sinopsis -->
-                <p>Al ver que la vida en la Tierra está llegando a su fin, un grupo de exploradores dirigidos por el piloto Cooper (McConaughey) y la científica Amelia (Hathaway) 
-                    emprende una misión que puede ser la más importante de la historia de la humanidad: viajar más allá de nuestra galaxia para descubrir algún planeta en 
+            <div id="DescripcionSinopsis"> <!--Seccion para la descripción de la sinopsis -->
+                <p>Al ver que la vida en la Tierra está llegando a su fin, un grupo de exploradores dirigidos por el
+                    piloto Cooper (McConaughey) y la científica Amelia (Hathaway)
+                    emprende una misión que puede ser la más importante de la historia de la humanidad: viajar más allá
+                    de nuestra galaxia para descubrir algún planeta en
                     otra que pueda garantizar el futuro de la raza humana.</p>
             </div>
         </section> <!--Fin de la sección de la sinopsis -->
@@ -83,20 +101,22 @@
 
         <!-- Sección con fotos de los principales miembros del cast-->
         <section id="Cast" class="full-height cast">
-            <h1 class="Titulo">Actores</h1>
+            <h1 class="Titulo">Cast</h1>
             <div class="Grid-fotos">
                 <div class="Cuadro">
-                    <img src="imagenes/ImagenesActores/nolan.jpg" alt="Cripstopher Nolan, director de la pelicula" class="Foto">
+                    <img src="imagenes/ImagenesActores/nolan.jpg" alt="Cripstopher Nolan, director de la pelicula"
+                        class="Foto">
                     <div class="Nombre">Christopher Nolan (Director)</div>
                 </div>
 
                 <div class="Cuadro">
-                    <img src="imagenes/ImagenesActores/brand.jpg" alt="actores" class="Foto">
-                    <div class="Nombre">Anne Hathaway</div>
-                </div>
-                <div class="Cuadro">
                     <img src="imagenes/ImagenesActores/cooper.jpg" alt="actores" class="Foto">
                     <div class="Nombre">Matthew McConaughey</div>
+
+                </div>
+                <div class="Cuadro">
+                    <img src="imagenes/ImagenesActores/brand.jpg" alt="actores" class="Foto">
+                    <div class="Nombre">Anne Hathaway</div>
                 </div>
                 <div class="Cuadro">
                     <img src="imagenes/ImagenesActores/murph_niña.jpg" alt="actores" class="Foto">
@@ -111,20 +131,20 @@
                     <div class="Nombre">Casey Affleck</div>
                 </div>
             </div>
-    </section>
+        </section>
 
-    <div class="Separador"> </div>
+        <div class="Separador"> </div>
         <!-- Sección de "Comunidad", en la que el usuario podrá ingresar sus datos para recibir noticias, información
         acceso a concursos y demás relacionados con la película -->
 
-        
+
         <section id="Comunidad" class="full-height comunidad">
             <h1>Comunidad</h1>
             <div class="Formulario">
                 <div class="Texto">
                     <h2>Ingresa tus datos para recibir noticias, información y acceso a concursos</h2>
                 </div>
-                <div class="Form">
+                <div>
                     <form>
                         <input type="text" id="nombreCompleto" placeholder="Ingrese su nombre completo" required>
                         <input type="email" id="correo" placeholder="Ingrese su correo electronico" required>
@@ -135,10 +155,40 @@
             </div>
         </section>
 
+        <div class="Separador"></div>
+
         <!-- FOOTER -->
         <footer id="footer">
-            <p> Pinga pinga pinga </p>
+            <div class="InfoEstudio">
+                <div class="logoYNombre">
+                    <img src="Imagenes/ImagenesFooter/Warnerlogo.png" alt="LogoWarnerBros" class="logoWarner">
+                    <img src="Imagenes/ImagenesFooter/warnerNombre.png" alt="NombreWarnerBros" class="nombreWarner">
+                </div>
+                <h2>Siguenos</h2>
+                <div class="RedesEstudio">
+                    <a href="https://www.facebook.com/WarnerBrosEnt" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/warnerbrosent" target="_blank">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/warnerbrosentertainment/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/user/WarnerBrosPictures" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                </div>
+                <p class="linea">Politicas y privacidad</p>
+                <p class="linea">Terminos y condiciones</p>
+                <p class="copyright">© Edwin y Alejandro</p>
+            </div>
+            <div class="Mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12966.647113744584!2d-118.3572810076343!3d34.15013386434567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bfc9aa08c01d%3A0xf625a30a07c80b58!2sWarner%20Bros.%20New%20York%20Street!5e1!3m2!1ses!2sco!4v1741470892656!5m2!1ses!2sco"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </footer>
+
     </div>
 
 
