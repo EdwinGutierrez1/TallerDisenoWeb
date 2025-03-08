@@ -1,63 +1,89 @@
+
+html{scroll-behavior: smooth;} /*Se agrega para que al hacer click en un enlace de navegación del navbar, la pagina se desplaze suavemente hacia abajo, y no simplemente "aparezcamos" en la sección
+
+
+/*Estilos del body*/
 body{
-    margin:0;
+    margin:0; 
     padding:0;
-    font-family: "Big Shoulders";
+    font-family: "Big Shoulders"; /*Fuente que se "importó" de google fonts*/
     box-sizing: border-box; /*Hacemos que el padding y el border se incluyan en el cálculo del ancho y alto del elemento.*/
 }
 
-/*Se establece la altura de cada sección al 100% del alto de la ventana gráfica (viewport height) */
+
+/*Se establece la altura de cada sección al 100% del alto de la ventana gráfica (viewport height)*/
 .full-height{
     height: 100vh;
 }
 
+
+/*El contenedor principal tendra una altura del 100% del espacio visible de la ventana */
 .ContenedorPrincipal{
     height:100vh;
 }
 
+/*Estilos de los enlaces*/
 a{
-    text-decoration: none;
-    color:black;
+    text-decoration: none; /*Sin decoración*/
+    color:#243c52; /*Por defecto apenas se abra la página los enlaces tendrán el color "alternativo" para asegurar que contrasten con la primera imagen del carursel*/
 }
 
-/* Estilos del Header */
-header{
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    display: flex;
-    padding: 1% 0;
-    justify-content: space-between;
+.Separador{ /*Clase para los divs de separación, la altura es muy pequeña, haciendo que sean una linea delgada*/
+    background-color: rgb(199, 198, 198);
+    height: 2px;    
 }
 
-header > img{
-    width: 20%;
-    margin: 0 5rem;
+
+/* ----------- ESTILOS DEL HEADER -----------------*/
+
+header {
+    position: absolute;  /* Colocamos el header en una posición absoluta, para que su ubicación sea independiente del flujo del resto del documento.*/
+    z-index: 100;  /* Para que el header esté por encima de los otros elementos*/
+    width: 100%;  /* ancho que ocupe toda la pantalla */
+    display: flex;  /* Usamos Flexbox para organizar sus elementos internos */
+    padding: 1% 0;  /*Se agrega un poco de padding vertical*/
+    justify-content: space-between;  /* Para Distribuir los elementos dentro del header dejando espacio entre ellos */
 }
 
-header > nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    justify-items: center;
-    margin: 0 3rem;
+header > img {
+    width: 20%;  /*20% del ancho disponible */
+    margin: 0 5rem;  /*Un poco de margen horizontal*/
 }
 
-header > nav > ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 8px;
+header > nav {
+    display: flex;  /*Flexbox para organizar los elementos del nav */
+    justify-content: space-around;  /* Distribuimos los elementos dentro del nav con espacios iguales */
+    align-items: center;  /*Para alinear los elementos al centro */
+    margin: 0 3rem;  /*Margen lateral*/
 }
 
-header > nav > ul > li{
-    display: inline;
-    margin: 0 16px;
+header > nav > ul {
+    list-style-type: none;  /*Para Eliminar las viñetas*/
+    margin: 0;  /*Sin margen*/
+    padding: 8px;  /*Un poco de padding*/
 }
 
-header > nav > ul > li > a {
-    font-weight: bold;
-    font-size: 30px;
-    padding: 22px 12px;
+header > nav > ul > li {
+    display: inline;  /*Para que los elementos de la lista se muestren en línea (uno al lado del otro)*/
+    margin: 0 16px;  /*Margen lateral*/
 }
+
+header > nav > ul > li > a {   
+    font-weight: bold;  /*Texto de los enlaces en negrita*/
+    font-size: 30px;  
+    padding: 22px 12px;  /*Se agrega padding vertical y lateral*/
+}
+
+#logoPagina {
+    font-size: 35px;  
+    font-family: 'Helvetica Neue';  
+    margin-left: 50px;  /*margen a la izquierda de 50px */
+    padding: 10px 12px;  /*Se agrega padding vertical y lateral*/
+    letter-spacing: 10px;  /*Espacio entre las letras del texto */
+    font-weight: bold;  /*texto en negrita */
+}
+
+
 
 /* El header tiene dos clases, header-blanco y header-alternativo, las cuales se usan dependiendo de la imagen que esté de fondo
 en el carrusel, para asegurar que siempre se genere un buen contraste y el texto sea legible */
@@ -67,105 +93,150 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
 }
 
 .header-alternativo{
-    color:#303f4d;
+    color: #243c52;
 }
 
-
-/* Clase para el efecto hover */
+/* Clase para el efecto hover de los links de navegación del navbar*/
 .efecto-hover {
     text-decoration: underline;
-    transform: scale(1.5);
 }
 
-/* ESTILOS DE LAS SECCIONES */
+/*------------------- ESTILOS DEL CARRUSEL ---------------*/
 
-/*Estilos del carrusel de fotos*/
-.carrusel{
-    width:100vw;
-    height:100vh;
-    position:relative;
-    overflow: hidden;
+/* Contenedor principal*/
+.carrusel {
+    width: 100vw;  /*100% del ancho de la ventana del navegador */
+    height: 100vh; /*100% de la altura de la ventana del navegador */
+    position: relative; /* Se usa para posicionar elementos hijos en relación con este contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del área visible */
 }
 
-.lista{
-    position: absolute;
-    top:0;
-    left:0;
-    height:100%;
-    display: flex;
-    width: max-content;
-    transition: 1s;
+/* Lista de imágenes dentro del carrusel */
+.lista {
+    position: absolute; /* Permite mover la lista libremente dentro del carrusel */
+    top: 0;  /*Se alinea la lista en la parte*/ 
+    left: 0; /*superior izquierda del carrusel*/
+    height: 100%; /* Ocupa toda la altura del carrusel*/
+    display: flex; /*Organiza las imágenes en una fila horizontal */
+    width: max-content; /* Ajusta el ancho al contenido total de las imágenes*/
+    transition: 1s; /*Agregamos una transición suave de 1 segundo*/
 }
 
-.lista img{
-    width:100vw;
-    height:100vh;
-    object-fit: cover;
+/* Imágenes dentro del carrusel */
+.lista img {
+    width: 100vw; /*100% del ancho de la ventana */
+    height: 100vh; /*100% de la altura de la ventana */
+    object-fit: cover; /*Se Ajusta la imagen para cubrir el área sin distorsionarse*/
 }
 
-.botones{
-    position: absolute;
-    top:45%;
-    left:2.5%;
-    width:94%;
-    display: flex;
-    justify-content: space-between;
+
+/* Contenedor de los botones de navegación */
+.botones {
+    position: absolute; /* Para colocar los botones sobre las imágenes */
+    top: 45%; /*Se alinean verticalmente */
+    left: 2.5%; /*Se alinean horizontalmente*/
+    width: 94%; /*ancho de los botones para cubrir el carrusel */
+    display: flex; /*Se Organizan los botones en una fila */
+    justify-content: space-between; /*Para ubicar un botón a la izquierda y otro a la derecha */
 }
 
-.botones button{
-    cursor:pointer;
-    border:none;
-    width:40px;
-    height:50px;
-    border-radius:20%;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    font-weight: bold;
+
+/* Estilos de los botones de navegación */
+.botones button {
+    cursor: pointer; /*Se cambia el cursor al pasar sobre el botón */
+    border: none; /*Sin bordes*/
+    width: 40px; /*ancho del botón */
+    height: 50px; /*altura del botón */
+    border-radius: 20%; /*Las esquinas de los botones son un poco redondeadas*/
+    background-color: rgba(0, 0, 0, 0.3); /*Color de fondo semitransparente*/
+    color: white; 
+    font-weight: bold; /*texto negrita */
     font-size: 120%;
 }
 
+/* Efecto hover para los botones */
 .botones button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-/*Estilos de la sección de sinopsis*/
-#Sinopsis{
-    position: relative;
-    background-image: url('Imagenes/ImagenesSinopsis/ImagenEndurance.png'); 
-    background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
-    background-position: center; /* Centra la imagen */
-    height: 100vh;
-}
-
-#Sinopsis .Texto{
-    position: absolute;
-    top: 22%; /* Centra el texto verticalmente */
-    left: 30%; /* Centra el texto horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para que el texto esté perfectamente centrado */
-    color: white; /* Cambia el color del texto */
-    font-size: 40px; /* Ajusta el tamaño del texto */
-    font-weight: bold; /* Haz el texto en negrita */
-    text-align: center;
-}
-
-#Descripcion {
-    position: absolute;
-    top: 50%; /* Centra el texto verticalmente */
-    left: 30%; /* Centra el texto horizontalmente */
-    max-width: 50%;
-    max-height: 30%;
-    transform: translate(-50%, -50%); /* Ajusta la posición para que el texto esté perfectamente centrado */
-    color: white; /* Cambia el color del texto */
-    font-size: 35px; /* Ajusta el tamaño del texto */
-    font-weight: bold; /* Haz el texto en negrita */
-    text-align: center; 
-    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo cuando el cursor está sobre el botón */
 }
 
 
 
-/*Estilos de la sección de galeria*/
-#Galeria{
+/*-------- ESTILOS DE LA SINOPSIS ------------*/
+
+/* Contenedor principal*/
+.sinopsis {
+    position: relative; /*Permite que elementos hijos se ubiquen dentro del contenedor */
+    width: 100vw; /*100% del ancho de la ventana del navegador */
+    height: 100vh; /*100% de la altura de la ventana del navegador */
+    overflow: hidden; /*Oculta cualquier contenido que se sale del área visible */
+}
+
+/* Video de fondo*/
+.videoBackground {
+    position: absolute; /*el video se posiciona en relación con .sinopsis */
+    top: 0; /*Se alinea el video*/
+    left: 0; 
+    width: 100%; /*100% del ancho del contenedor */
+    height: 100%; /*100% de la altura del contenedor */
+    object-fit: cover; /*Se ajusta el video para que cubra todo el espacio sin distorsionarse */
+}
+
+/* Imagen de la nave Endurance */
+#Endurance {
+    padding: 0; /*Sin relleno*/
+    margin: 0; /*Sin margen */
+    position: absolute; /* Permite posicionar la imagen dentro de la sección */
+    top: 16%; /*Se ubica la imagen*/
+    left: 63%; 
+    width: 29%; /*ancho de la imagen*/
+    transition: transform 0.3s ease-in-out; /*Aplicamos una animación suave al cambiar el tamaño*/
+}
+
+/* Efecto al pasar el mouse sobre la imagen del Endurance*/
+#Endurance:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+/* Título de la sinopsis */
+#TituloSinopsis {
+    font-weight: bold; /* Texto en negrita */
+    letter-spacing: 5px; /* Espaciado entre letras */
+    color: white; 
+    position: absolute; /* Se posiciona dentro del contenedor sin afectar el flujo normal*/
+    font-size: 50px; 
+    top: 5%; /*Se posiciona el elemento*/
+    left: 20.5%; 
+    transition: transform 0.3s ease-in-out; /*Se aplica un efecto de escala suave */
+}
+
+/* Efecto al pasar el mouse sobre el título */
+#TituloSinopsis:hover {
+    transform: scale(1.04); /* Aumenta ligeramente el tamaño del título */
+}
+
+/* Descripción de la sinopsis */
+#DescripcionSinopsis {
+    font-weight: bold; /* Texto en negrita */
+    width: 40%; /*40% del ancho del contenedor */
+    text-align: left; 
+    color: white; 
+    position: absolute; /* Posiciona el texto de manera absoluta dentro del contenedor */
+    font-size: 45px; 
+    top: 25%; /* Se posiciona el elemento */
+    left: 10%; 
+    transition: transform 0.3s ease-in-out; /* Aplica una animación suave al cambiar el tamaño */
+}
+
+/* Efecto al pasar el mouse sobre la descripción */
+#DescripcionSinopsis:hover {
+    transform: scale(1.04); /*Aumenta ligeramente el tamaño del texto */
+}
+
+
+
+
+/*Estilos de la sección del Cast*/
+#Cast{
     background: rgb(0,0,0);
     background: linear-gradient(45deg, rgba(0,0,0,1) 5%, rgba(1,2,38,1) 51%, rgba(13,2,42,1) 86%, rgba(0,0,0,1) 100%);
     height: 100vh;
@@ -224,6 +295,7 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
     margin: 0;
     padding: 0;
 }
+
 
 #Comunidad h1{
     display: flex;
