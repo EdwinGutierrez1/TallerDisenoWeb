@@ -4,39 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">   <!-- Se enlaza el documento html con la hoja de estilos (css)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">  <!-- Se enlaza el documento con la API de Google para incluir un mapa en el footer-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
-    rel="stylesheet">
-    <!-- Se linkea con un icono externo de google fonts. -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_right" /> 
-    <title>Interstelar™</title>
+    <!-- Se usa una fuente externa de google fonts, introduciendo su link en el header.-->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ponomar&family=Radley:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" href="Imagenes/LogoPagina/logo.png"> <!-- Se le pone un icono a la pagina web-->
+    <title>Interstellar™</title> <!-- Titulo de la pagina web-->
 </head>
 
+
 <body>
+    <div class="ContenedorPrincipal"> <!-- Contiene tanto el header como el carrusel, es la sección que el usuario mira tan pronto se abre la pagina-->
 
-    <div class="ContenedorPrincipal">
-
-        <!-- Carrusel de imagenes de la película y el detrás de cámaras-->
+        <!-- Carrusel de imagenes de la película-->
         <section id="SeccionInicial" class="full-height SeccionInicial">
-
-            <header class="header-negro header-blanco">
-                <img src="Imagenes/logo.png" alt="Logo de la pelicula" id="logo">
-                <nav class="navbar">
+            <header class="header-blanco">
+            <a id="logoPagina" href="https://www.youtube.com/watch?v=zSWdZVtXT7E" target="_blank">INTERSTELLAR</a> <!-- El logo de la pagina, es el nombre de la pelicula, y al hacer click en este, nos lleva a su trailer-->
+                <nav class="navbar"> <!--Barra de navegación -->
                     <ul>
-                        <li><a id="link1" href="#Carrusel">Inicio</a></li>
-                        <li><a id="link2" href="#Sinopsis">Sinopsis</a></li>
-                        <li><a id="link3" href="#Galeria">Galería</a></li>
+                        <li><a id="link1" href="#Carrusel">Inicio</a></li> <!--Al hacer click en uno de los "botones" de navegación, nos enviará a una sección concreta de la pagina -->
+                        <li><a id="link2" href="#Sinopsis">Sinopsis</a></li> <!--Dentro de cada list element hay un anchor (enlace)-->
+                        <li><a id="link3" href="#Cast">Cast</a></li>
                         <li><a id="link4" href="#Comunidad">Comunidad</a></li>
                     </ul>
                 </nav>
             </header>
 
-            <div class="carrusel">
-                <div class="lista"> 
-                    <div class="item">
+            <div class="carrusel"> <!-- Se crea un div para el carrusel -->
+                <div class="lista">  
+                    <div class="item"> <!--Cada imagen dentro del carrusel va dentro de su propia sección, de la clase "item"-->
                         <img src="Imagenes/ImagenesCarrusel/ImagenPrincipal.jpeg">
                     </div> 
                     <div class="item">
@@ -49,31 +48,41 @@
                         <img src="Imagenes/ImagenesCarrusel/ImagenFamilia.jpg">
                     </div>
                 </div>
+
                 <!-- Se crean los botones para ir atrás y adelante -->
                 <div class="botones">
-                    <button id="prev">&#10094</button>
+                    <button id="prev">&#10094</button> <!--Los símbolos dentro de las etiquetas <button> representan flechas y están escritos en código Unicode -->
                     <button id="next">&#10095</button>
                 </div>
             </div>
+        </section> <!--Se cierra la sección Inicial -->
 
-        </section>
+
+        <div class="Separador"> </div> <!-- Se agrega un div de la clase Separador. Esta se agregará después de cada sección grande -->
 
 
         <!-- Sección de la sinopsis -->
         <section id="Sinopsis" class="full-height sinopsis">
-            <div class="Texto">
+            <video src="Imagenes/FotosVideosSinopsis/VideoEspacio.mp4" autoplay muted loop class="videoBackground"></video> <!-- Agregamos un video para el fondo de la sección. Definimos que se reproduzca automaticamente, este muteado y se repita indefinidamente-->
+            <a href="https://interstellarfilm.fandom.com/wiki/Endurance" target="blank"> <!-- anchor para llevar al usuario a una wiki con más información de la nave (se abre en una nueva pestaña)-->
+                <img src="Imagenes/FotosVideosSinopsis/ImagenEnduranceSF.png" title="Nave Endurance" alt="Imagen del Endurance" id="Endurance"> <!-- Se agrega la imagen de la nave "Endurance"-->
+            </a>
+            <div id="TituloSinopsis"> <!--Seccion para el titulo de la sinopsis -->
                 <h2>Sinopsis</h2>
             </div>
-            <div id="Descripcion">
-                <p>Al ver que la vida en la Tierra está llegando a su fin, un grupo de exploradores dirigidos por el
-                    piloto Cooper (McConaughey) y la científica Amelia (Hathaway) emprende una misión que puede ser la
-                    más importante de la historia de la humanidad: viajar más allá de nuestra galaxia para descubrir
-                    algún planeta en otra que pueda garantizar el futuro de la raza humana. </p>
+            <div id="DescripcionSinopsis">  <!--Seccion para la descripción de la sinopsis -->
+                <p>Al ver que la vida en la Tierra está llegando a su fin, un grupo de exploradores dirigidos por el piloto Cooper (McConaughey) y la científica Amelia (Hathaway) 
+                    emprende una misión que puede ser la más importante de la historia de la humanidad: viajar más allá de nuestra galaxia para descubrir algún planeta en 
+                    otra que pueda garantizar el futuro de la raza humana.</p>
             </div>
-        </section>
+        </section> <!--Fin de la sección de la sinopsis -->
 
-        <!-- Galeria con fotos de los actores principales -->
-        <section id="Galeria" class="full-height galeria">
+
+        <div class="Separador"> </div> <!--Se agrega un div de la clase separador -->
+
+
+        <!-- Sección con fotos de los principales miembros del cast-->
+        <section id="Cast" class="full-height cast">
             <h1 class="Titulo">Actores</h1>
             <div class="Grid-fotos">
                 <div class="Cuadro">
@@ -104,13 +113,29 @@
             </div>
     </section>
 
+    <div class="Separador"> </div>
         <!-- Sección de "Comunidad", en la que el usuario podrá ingresar sus datos para recibir noticias, información
         acceso a concursos y demás relacionados con la película -->
+
+        
         <section id="Comunidad" class="full-height comunidad">
-            <form action="Post">
-                <label for="nombreCompleto">Ingrese el nombre completo</label>
-            </form>
+            <h1>Comunidad</h1>
+            <div class="Formulario">
+                <div class="Texto">
+                    <h2>Ingresa tus datos para recibir noticias, información y acceso a concursos</h2>
+                </div>
+                <div class="Form">
+                    <form>
+                        <input type="text" id="nombreCompleto" placeholder="Ingrese su nombre completo" required>
+                        <input type="email" id="correo" placeholder="Ingrese su correo electronico" required>
+                        <input type="tel" id="telefono" placeholder="Ingrese su numero de telefono" required>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
         </section>
+
+        <!-- FOOTER -->
         <footer id="footer">
             <p> Pinga pinga pinga </p>
         </footer>
