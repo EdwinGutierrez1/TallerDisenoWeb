@@ -327,7 +327,7 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(55, 108, 189, 0.1);
+    background-color: rgba(55, 108, 189, 0.25);
     margin: 3rem 0 0 20rem;
     padding-bottom: 30px ;
     max-width: 35%;
@@ -356,7 +356,7 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
     color: white;
 }
 
-.Formulario input[type="submit"] {
+.Formulario .botonEnviar {
     width: 200px;
     height: 40px;
     border-radius: 5px;
@@ -371,11 +371,16 @@ en el carrusel, para asegurar que siempre se genere un buen contraste y el texto
     padding: 0; /* Elimina padding para no romper el centrado */
     background-color: rgba(7, 29, 63, 0.7);
     color: white;
+    cursor: pointer;
+}
+
+.botonEnviar:hover{
+    background-color: rgba(7, 29, 63, 0.9);
 }
 
 input::placeholder{
     color: white;
-    font-size: 17px ;
+    font-size: 28px ;
     text-align: center;
 }
 
@@ -463,15 +468,15 @@ input::placeholder{
     margin: 0;
     margin-left: 12rem;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .linea{
     display: inline-block;
     justify-content: center;
     align-items: center;
-    margin:  20px 10px 0 50px; 
+    margin:  20px 10px 0 80px; 
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: underline;
 }
