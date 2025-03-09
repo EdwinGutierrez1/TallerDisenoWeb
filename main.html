@@ -101,94 +101,133 @@
 
         <!-- Sección con fotos de los principales miembros del cast-->
         <section id="Cast" class="full-height cast">
-            <h1 class="Titulo">Cast</h1>
+            <!-- Sección de la clase "cast", Se agrega la clase full-height esta para que la seccion ocupe el 100% de la altura-->
+            <h1 class="Titulo">Cast</h1> 
+            <!-- Titulo de la seccion -->
             <div class="Grid-fotos">
+                <!-- Se crea un grid para las fotos de los actores -->
                 <div class="Cuadro">
+                    <!-- Se crea un div para cada actor, con su respectiva foto y nombre -->
                     <img src="imagenes/ImagenesActores/nolan.jpg" alt="Cripstopher Nolan, director de la pelicula"
                         class="Foto">
                     <div class="Nombre">Christopher Nolan (Director)</div>
                 </div>
-
                 <div class="Cuadro">
+                    <!-- Se crea un div para cada actor, con su respectiva foto y nombre -->
                     <img src="imagenes/ImagenesActores/cooper.jpg" alt="actores" class="Foto">
                     <div class="Nombre">Matthew McConaughey</div>
 
                 </div>
                 <div class="Cuadro">
+                    <!-- Se crea un div para cada actor, con su respectiva foto y nombre -->
                     <img src="imagenes/ImagenesActores/brand.jpg" alt="actores" class="Foto">
                     <div class="Nombre">Anne Hathaway</div>
                 </div>
                 <div class="Cuadro">
+                    <!-- Se crea un div para cada actor, con su respectiva foto y nombre -->
                     <img src="imagenes/ImagenesActores/murph_niña.jpg" alt="actores" class="Foto">
                     <div class="Nombre">Mackenzie Foy</div>
                 </div>
                 <div class="Cuadro">
+                    <!-- Se crea un div para cada actor, con su respectiva foto y nombre -->
                     <img src="imagenes/ImagenesActores/murph.jpg" alt="actores" class="Foto">
                     <div class="Nombre">Jessica Chastain</div>
                 </div>
                 <div class="Cuadro">
+                    <!-- Se crea un div para cada actor, con su respectiva foto y nombre -->
                     <img src="imagenes/ImagenesActores/tom.jpg" alt="actores" class="Foto">
                     <div class="Nombre">Casey Affleck</div>
                 </div>
             </div>
+            <!-- Fin de la seccion -->
         </section>
 
-        <div class="Separador"> </div>
+        <div class="Separador"> </div> <!--Se agrega un div de la clase separador, esta se verá al final de cada seccion grande -->
+
+
+
         <!-- Sección de "Comunidad", en la que el usuario podrá ingresar sus datos para recibir noticias, información
         acceso a concursos y demás relacionados con la película -->
-
-
         <section id="Comunidad" class="full-height comunidad">
+            <!-- Sección de la clase "comunidad", Se agrega la clase full-height esta para que la seccion ocupe el 100% de la altura-->
             <h1>Comunidad</h1>
+            <!-- Titulo de la seccion -->
             <div class="Formulario">
+                <!-- Se crea un div para el formulario, Esto para tener todo encerrado en un solo cuadro -->
                 <div class="Texto">
+                    <!-- Se crea un div para el texto-->
                     <h2>Ingresa tus datos para recibir noticias, información y acceso a concursos</h2>
                 </div>
                 <div>
+                    <!-- Se crea un div para el formulario -->
                     <form>
+                        <!-- Se crea un formulario con los campos necesarios para que el usuario ingrese sus datos -->
                         <input type="text" id="nombreCompleto" placeholder="Ingrese su nombre completo" required>
+                        <!-- El campo "nombreCompleto", su respectivo placeholder y lo hacemos requerido para enviar el form -->
                         <input type="email" id="correo" placeholder="Ingrese su correo electronico" required>
+                        <!-- El campo "correo", su respectivo placeholder y lo hacemos requerido para enviar el form -->
                         <input type="tel" id="telefono" placeholder="Ingrese su numero de telefono" required>
+                        <!-- El campo "telefono", su respectivo placeholder y lo hacemos requerido para enviar el form -->
                         <input type="submit" value="Enviar" class="botonEnviar">
+                        <!-- Se crea un boton para enviar el formulario -->
+                        <!-- Se le da una clase para poder darle estilos en el css -->
                     </form>
                 </div>
             </div>
+            <!-- Fin de la sección -->
         </section>
 
-        <div class="Separador"></div>
+        <div class="Separador"></div> <!--Se agrega un div de la clase separador, esta se verá al final de cada seccion grande -->
 
         <!-- FOOTER -->
         <footer id="footer">
+            <!-- Sección del footer, en la que se incluirá información sobre el estudio, un mapa y las redes sociales -->
             <div class="InfoEstudio">
+                <!-- Se crea un div para la información del estudio, dentro de este div se hacen otros dos, para -->
+                <!-- al darle estilos separarlos -->
                 <div class="logoYNombre">
+                    <!-- Se crea un div para el logo y el nombre del estudio -->
                     <img src="Imagenes/ImagenesFooter/Warnerlogo.png" alt="LogoWarnerBros" class="logoWarner">
+                    <!-- Se agrega el logo de Warner Bros -->
                     <img src="Imagenes/ImagenesFooter/warnerNombre.png" alt="NombreWarnerBros" class="nombreWarner">
+                    <!-- Se agrega el nombre de Warner Bros -->
                 </div>
+                <!-- Titulo para las redes sociales -->
                 <h2>Siguenos</h2>
+                <!-- Se crea un div para las redes sociales -->
                 <div class="RedesEstudio">
+                    <!-- Se crean los iconos de las redes sociales -->
                     <a href="https://www.facebook.com/WarnerBrosEnt" target="_blank">
                         <i class="fab fa-facebook"></i>
                     </a>
+                    <!-- Se crean los iconos de las redes sociales -->
                     <a href="https://twitter.com/warnerbrosent" target="_blank">
                         <i class="fab fa-x"></i>
                     </a>
+                    <!-- Se crean los iconos de las redes sociales -->
                     <a href="https://www.instagram.com/warnerbrosentertainment/" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
+                    <!-- Se crean los iconos de las redes sociales -->
                     <a href="https://www.youtube.com/user/WarnerBrosPictures" target="_blank">
                         <i class="fab fa-youtube"></i>
+                        <!-- Se crean los iconos de las redes sociales -->
                 </div>
+                <!-- Agregamos la info extra ademas del copyright -->
                 <p class="linea">Politicas y privacidad</p>
                 <p class="linea">Terminos y condiciones</p>
                 <p class="copyright">© Edwin y Alejandro</p>
             </div>
             <div class="Mapa">
+                <!-- Se crea un div para el mapa -->
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12966.647113744584!2d-118.3572810076343!3d34.15013386434567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bfc9aa08c01d%3A0xf625a30a07c80b58!2sWarner%20Bros.%20New%20York%20Street!5e1!3m2!1ses!2sco!4v1741470892656!5m2!1ses!2sco"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Se agrega un mapa de google maps, en la ubicacion de las instalaciones de warner bros marcadas -->
             </div>
+            <!-- Fin del footer -->
         </footer>
-
+        <!-- Fin del contenedor principal -->
     </div>
 
 

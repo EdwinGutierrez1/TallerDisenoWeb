@@ -82,26 +82,36 @@ function recargarCarrusel() {
 
 
 
-/*Codigo relacionado con las imagenes del cast */
+// Se ejecuta este código solo cuando el contenido de la página ha sido completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // Selecciona todos los elementos con la clase "Cuadro" en el documento
     document.querySelectorAll(".Cuadro").forEach(cuadro => {
+        //  Busca un elemento hijo con la clase "Nombre" dentro de cada "Cuadro"
         const capa = cuadro.querySelector(".Nombre"); // Seleccionamos el nombre
+
+        // Busca un elemento hijo con la clase "Foto" dentro de cada "Cuadro"
         const imagen = cuadro.querySelector(".Foto"); // Seleccionamos la imagen
 
+        // Verifica si ambos elementos ("Nombre" y "Foto") existen dentro del "Cuadro"
         if (capa && imagen) {
+            // Agrega un evento para cuando el ratón pasa por encima del "Cuadro"
             cuadro.addEventListener("mouseover", () => {
-                capa.style.opacity = "1"; // Hace visible el nombre
-                capa.style.transition = "opacity 0.3s ease-in-out"; // Transición suave
-                imagen.style.transform = "scale(1.1)"; // Agranda la imagen
-                imagen.style.transition = "transform 0.3s ease-in-out"; // Animación suave
+                capa.style.opacity = "1"; // Muestra el nombre haciendo visible su capa
+                capa.style.transition = "opacity 0.3s ease-in-out"; // Aplica una transición suave a la visibilidad del nombre
+                imagen.style.transform = "scale(1.1)"; // Aumenta el tamaño de la imagen ligeramente (efecto de zoom)
+                imagen.style.transition = "transform 0.3s ease-in-out"; // Aplica una transición suave al zoom de la imagen
             });
 
+            // Agrega un evento para cuando el ratón deja de estar sobre el "Cuadro"
             cuadro.addEventListener("mouseout", () => {
-                capa.style.opacity = "0"; // Oculta el nombre
-                imagen.style.transform = "scale(1)"; // Vuelve al tamaño normal
+                capa.style.opacity = "0"; // Oculta el nombre al hacer su capa invisible
+                imagen.style.transform = "scale(1)"; // Restaura el tamaño original de la imagen
             });
         } else {
+            // Muestra una advertencia en la consola si no se encuentran los elementos esperados dentro del "Cuadro"
             console.warn("No se encontró .Nombre o .Foto dentro de un .Cuadro", cuadro);
         }
     });
 });
+
